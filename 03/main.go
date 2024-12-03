@@ -20,7 +20,7 @@ func ReadLines(filename string) []string {
 
 func part1() {
 	lines := ReadLines("input.txt")
-	pattern := regexp.MustCompile("mul\\([0-9]{1,3}\\,[0-9]{1,3}\\)")
+	pattern := regexp.MustCompile(`mul\([0-9]{1,3}\,[0-9]{1,3}\)`)
 	sum := 0
 	for _, line := range lines {
 		matches := pattern.FindAllString(line, -1)
@@ -36,7 +36,7 @@ func part1() {
 
 func part2() {
 	lines := ReadLines("input.txt")
-	pattern := regexp.MustCompile("do\\(\\)|don't\\(\\)|mul\\([0-9]{1,3}\\,[0-9]{1,3}\\)")
+	pattern := regexp.MustCompile(`do\(\)|don't\(\)|mul\([0-9]{1,3}\,[0-9]{1,3}\)`)
 	sum := 0
 	enabled := true
 	for _, line := range lines {
